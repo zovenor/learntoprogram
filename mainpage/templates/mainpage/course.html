@@ -1,0 +1,118 @@
+{% extends 'mainpage/base.html' %}
+{% load static %}
+
+{% block title %}{{ el.name }}{% endblock %}
+
+{% block content %}
+
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            flex-flow: column;
+        }
+        .tmax{
+            font-size: 50px;
+        }
+        .tmin{
+            font-size: 20px;
+        }
+        .count{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 10px;
+        }
+        .count .lweek, .count .lall, .count .age{
+            display: flex;
+            align-items: center;
+            flex-flow: column;
+            margin: 25px;
+        }
+        .sign_up{
+            text-decoration: none;
+            color: #FFF;
+            padding: 40px;
+            background-color: #f06a6a;
+            font-size: 50px;
+            border-radius: 40px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin: 40px;
+            transition: .35s;
+        }
+        .sign_up:hover{
+            box-shadow: 0px 0px 30px #f06a6a;
+        }
+        .cabout{
+            font-size: 25px;
+            box-shadow: 0px 4px 50px 50px rgba(165, 165, 165, 0.25);
+            margin-top: 100px;
+            margin-bottom: 100px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            flex-wrap: wrap;  
+            width: 100%;  
+        }
+        h1{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 35px;
+        }
+        iframe {
+            margin: 30px
+        }
+        .description{
+            padding: 35px;
+        }
+        @media only screen and (max-width: 700px), (orientation:portrait){
+            iframe {
+                width: 100vw;
+                margin: 0;
+                padding: 0;
+            }
+            h1{
+                font-size: 1.25em;
+            }
+            .description{
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <div class="cabout">
+        <h1>{{ el.name }}</h1>
+        <div class="description">
+            {{ el.description|safe }}
+        </div>
+        {% if el.youtube %}
+
+        {{ el.youtube|safe }}
+
+    {% endif %}
+    
+    <div class="count">
+        <div class="lweek">
+            <div class="tmax"><b>{{ el.get_count.0 }}</b></div>
+            <div class="tmin">в неделю</div>
+        </div>
+        <div class="lall">
+            <div class="tmax"><b>{{ el.get_count.1 }}</b></div>
+            <div class="tmin">всего</div>
+        </div>
+        <div class="age">
+            <div class="tmax"><b>{{ el.get_age }}</b></div>
+            <div class="tmin">возраст</div>
+        </div>
+    </div>
+
+    <a class="sign_up" href="https://docs.google.com/forms/d/e/1FAIpQLSeYzKCuU9QHrAn5DZLMJjXtqJ9JnGWf8NdRpQ1YUmuR9XDeQw/viewform">
+        <b>Записаться</b>
+    </a>
+
+    </div>
+
+    
+{% endblock %}

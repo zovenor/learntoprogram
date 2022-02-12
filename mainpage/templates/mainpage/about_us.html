@@ -1,0 +1,198 @@
+{% extends 'mainpage/base.html' %}
+{% load static %}
+
+{% block title %}О нас{% endblock %}
+
+{% block content %}
+
+<style>
+    body{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .about_us{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        color: #6D6D6D;
+        font-size: 20px;
+    }
+    .about_us .aimg{
+        width: 30%;
+        margin: 50px;
+    }
+    .about_us .atxt{
+        max-width: 50%;
+        margin-top: 50px;
+    }
+    .about_us img{
+        border-radius: 40px;
+        width: 100%;
+        box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.25);
+    }
+    .atxt{
+            font-family: 'SF Pro';
+    }
+    .aimg iframe{
+        margin-top: 30px;
+    }
+    .flexslider{
+        width: 700px;
+    }
+    .mobile_frame{
+        display: none;
+    }
+    .slides li img{
+        height: 100%;
+    }
+    @media only screen and (max-width: 700px), (orientation:portrait){
+        .slides, .flexslider{
+            width: 100vw;
+        }
+        .about_us{
+            flex-wrap: wrap;
+        }
+        .about_us .aimg{
+            width: 80%;
+            margin: 0;
+        }
+        .about_us .atxt{
+            max-width: 80%;
+        }
+        .mobile_frame{
+            display: flex;
+        }
+        .about_us .aimg iframe{
+            display: none;
+        }
+    }
+</style>
+
+    <div class="about_us">
+        <div class="aimg">
+            <img src="{% static 'mainpage/img/EmbeddedImage.jpg' %}" alt="">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/2EsPQjuB5qw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="atxt">
+            <h1>Жук Владимир Анатольевич</h1>
+
+<h3>Учитель информатики ГУО "Средняяя школа № 11 г. Слуцка"</h3>
+
+<h3>Высшая квалификационная категория, стаж работы 28 лет.</h3>
+
+Самые активные и целеустремлённые ребята добились побед на международных конкурсах и олимпиадах в Польше, Мексике, США, России, Румынии, Бельгии, Сербии, Германии. <br><br>
+
+Самые ценные награды воспитанников:
+
+<ul>
+    <li>Бронзовая медаль на международной олимпиаде в Польше, 2005</li>
+
+<li>Золотая медаль на международной олимпиаде в Мексике, 2006</li>
+
+<li>диплом 3 степени на Всероссийской командной олимпиаде школьников по программированию в Санкт-Петербурге, 2010</li>
+
+<li>Специальный приз от кампании GoDaddy на Intel ISEF 2015, США</li>
+
+<li>Золотая медаль на международной конференции ICYS 2016, Румыния</li>
+
+<li>Специальный приз от CERN на конференции молодых ученых стран Евросоюза EUCYS 2016, Бельгия</li>
+
+<li>Бронзовая медаль на международной конференции ICYS 2017, Германия</li>
+
+<li>Главный приз от кампании ORACLE и диплом 3 степени на Intel ISEF 2017, США</li>
+
+<li>Бронзовая медаль на международной конференции ICYS 2018, Сербия</li>
+
+<li>Диплом 2 степени на конкурсе научно-технического творчества Союзного государства Беларусь и Россия "Таланты XXI века"</li>
+
+<li>Дипломы на Балтийском научно-инженерном конкурсе в Санкт-Петербурге 2015, 2016, 2017, 2018, 2019, 2020</li>
+
+<li>Дипломы на конкурсе Потенциал в Москве 2019, 2020, 2021</li>
+
+<li>Дипломы на республиканских олимпиадах и конференциях 2002-2021.</li>
+</ul>
+
+<b>
+    Многие учащиеся поступили в Вузы нашей страны и России и успешно работают в ИТ-сфере.
+
+Всегда верю в своих учеников! Давайте вместе развиваться!
+</b>
+        </div>
+    </div>
+
+    <iframe class="mobile_frame" width="100%" height="315" src="https://www.youtube.com/embed/2EsPQjuB5qw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <link rel="stylesheet" href="{% static 'mainpage/woocommerce-FlexSlider-690832b/flexslider.css' %}" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="{% static 'mainpage/woocommerce-FlexSlider-690832b/jquery.flexslider.js' %}"></script>
+
+    <script type="text/javascript">
+        $(function(){
+          SyntaxHighlighter.all();
+        });
+        $(window).load(function(){
+          $('.flexslider').flexslider({
+            animation: "slide",
+            start: function(slider){
+              $('body').removeClass('loading');
+            }
+          });
+        });
+      </script>
+
+    <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (1).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (2).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (3).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (4).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (5).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (6).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/unnamed.jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (8).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (9).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (10).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (11).jpg' %}" />
+          </li>
+          <li>
+            <img height="100%" src="{% static 'mainpage/img/gallery/EmbeddedImage (12).jpg' %}" />
+          </li>
+        </ul>
+      </div>
+
+      <style>
+        .flexslider{
+          border: 0px solid #fff;
+        }
+        .flexslider .slides li{
+          height: 400px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+    </style>
+
+{% endblock %}

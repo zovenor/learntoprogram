@@ -1,0 +1,263 @@
+{% extends 'mainpage/base.html'%}
+{% load static %}
+
+{% block title %}
+    Learning to program
+{% endblock %}
+
+{% block content %}
+
+    <style>
+        body{
+            padding-top: 0;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main .video{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 60%;
+            height: 70%;
+        }
+        .main .video span{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(236, 236, 236);
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+        .main .video video{
+            width: 100%;
+            height: 100%;
+            border-radius: 40px;
+            overflow: hidden;
+            object-fit: cover;
+        } 
+        .name{
+            position: absolute;
+            color:rgb(236, 236, 236);
+            font-family: 'SF Pro';
+            font-size: 300%;
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+            margin: 10px;
+        }
+        .subname{
+            position: absolute;
+            font-family: 'SF Pro';
+            color: #CFCFCF;
+            margin-bottom: 15px;
+        }
+        .about{
+            margin-top: 100px;
+            margin-bottom: 100px;
+            width: 100%;
+            min-height: 80%;
+            box-shadow: 0px 4px 50px 50px rgba(165, 165, 165, 0.25);
+            display: flex;   
+            flex-wrap: wrap;
+            flex-flow: row;
+        }
+        .about .img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+        .about p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'SF Pro';
+            color: #393939;
+            font-size: 25px;
+            padding: 25px;
+        }
+        .sign{
+            font-family: 'SF Pro';
+            width: 100%;
+            margin-top: 150px;
+            margin-bottom: 100px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+        .numbers{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            color: #6D6D6D;
+            flex-wrap: wrap;
+        }
+        .number{
+            margin: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+        .nmax{
+            font-size: 50px;
+        }
+        .nmin{
+            font-size: 20px;
+        }
+        .sign_up{
+            text-decoration: none;
+            color: #FFF;
+            padding: 40px;
+            background-color: #f06a6a;
+            font-size: 50px;
+            border-radius: 40px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin: 40px;
+            transition: .35s;
+        }
+        .sign_up:hover{
+            box-shadow: 0px 0px 30px #f06a6a;
+        }
+        .courses{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .course{
+            width: 800px;
+            height: 250px;
+            background: #F4F4F4;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 40px;
+            display: flex;
+            transition: .5s;
+            margin: 20px;
+            text-decoration: none;
+        }
+        .course:hover{
+            transform: translateX(-10px);
+        }
+        .course .cimg{
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            width: 330px;
+            border-radius: 40px;
+        }
+        .cabout{
+            padding: 15px;
+            font-family: 'SF Pro';
+            color: #6D6D6D;
+            font-size: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-flow: column;
+        }
+        .cabout div{
+            margin: 5px;
+        }
+        @media only screen and (max-width: 700px), (orientation:portrait){
+            .main .video{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 0;
+            }
+            .main .video video{
+                border-radius: 0;
+            }
+            .about{
+                margin-top: 200px;
+                flex-flow: column;
+            }
+            .course{
+                flex-flow: column;
+                height: auto
+            }
+            .course .cimg{
+                width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
+
+    <div class="main">
+        <div class="video">
+           <span>
+            <video autoplay muted loop src="{% static 'mainpage/video/videoplayback.mp4' %}"></video>
+            <div class="name">
+                <b>Learning to program</b>
+            </div>
+           </span>
+           <div class="subname">
+            <b>УЧИМСЯ ПРОГРАММИРОВАТЬ <br> "YOUNG PROGRAMMER'S CLUB"</b>
+        </div>
+        </div>
+    </div>
+
+    <div class="about">
+        <div class="img">
+            <img width="100%" src="{% static 'mainpage/img/20945582.jpg' %}" alt="">
+        </div>
+        <p>В настоящий момент профессия программиста является одной из самых востребованных и перспективных. Многие задаются вопросом, с чего и когда начать?<br>
+
+            Можно просто ходить в школу и начать изучать программирование на уроках по предмету "Информатика" с 6-го класса с языка Pascal, который был специально придуман для обучения программированию, и так до 11 класса. Но мировая практика показывает, что можно начать изучение в более раннем возрасте и двигаться целеустремленнее в этом направлении и к окончанию школы уже уметь составлять и отлаживать программы, уверенно работать в профессиональной среде программирования, знать не только команды и синтаксис конкретного языка программирования, но и разбираться в методах алгоритмизации. Немаловажным является также получение навыков самостоятельного выполнения разработки проекта для решения конкретной практической задачи и попробовать работать в команде сверстников. <br>
+            
+            Для этого мы предлагаем начать процесс изучения основам программирования гораздо раньше и предлагаем несколько курсов, которые рассчитаны на ребят различного возраста, не знакомых с программированием. </p>
+    </div>
+
+    <div class="sign">
+        <div class="numbers">
+            <div class="number">
+                <div class="nmax"><b>45 минут</b></div>
+                <div class="nmin">длится 1 занятие</div>
+            </div>
+            <div class="number">
+                <div class="nmax"><b>6-10 детей</b></div>
+                <div class="nmin">в группе</div>
+            </div>
+            <div class="number">
+                <div class="nmax"><b>от 32 руб.</b></div>
+                <div class="nmin">месячный абонемент</div>
+            </div>
+        </div>
+        <a class="sign_up" href="https://docs.google.com/forms/d/e/1FAIpQLSeYzKCuU9QHrAn5DZLMJjXtqJ9JnGWf8NdRpQ1YUmuR9XDeQw/viewform">
+            <b>Записаться</b>
+        </a>
+    </div>
+
+    <div class="courses" id="courses">
+
+        {% for el in courses %}
+        <a href="/courses/{{ el.id }}" class="course">
+            <div style="background-image: url({{ el.image }})" class="cimg"></div>
+            <div class="cabout">
+                <div class="cname"><b>{{ el.name }}</b></div>
+                <div class="cage">Возрастная категория: {{ el.get_age }}</div>
+                <div class="clessons">{{ el.get_count.0 }} в неделю, {{ el.get_count.1 }}</div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
