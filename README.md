@@ -1,5 +1,5 @@
 # learntoprogram
 
-/admin
+<b>/admin</b><br>
 username = admin
 password = admin
